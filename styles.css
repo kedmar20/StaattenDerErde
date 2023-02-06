@@ -1,0 +1,79 @@
+:root {
+  --LightModeText: hsl(200, 15%, 8%);
+  --LightModeInput: hsl(0, 1%, 34%);
+  --LightModeBackground: hsl(0, 0%, 98%);
+  font-size: 1.1vw;
+  color: var(--LightModeBackground);
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  /* list-style: none; */
+}
+
+body {
+  max-width: 100vw;
+  max-height: 100vw;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+header {
+  height: 10vh;
+  width: 100vw;
+  background-color: var(--LightModeText);
+}
+
+main {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 5em 0;
+  width: 90%;
+  margin: auto;
+  background-color: var(--LightModeInput);
+}
+
+.container-countries {
+  background-color: var(--LightModeInput);
+  /* max-width: 75vw; */
+  width: 95%;
+  display: grid;
+  grid-template-columns: 18vw 18vw 18vw 18vw;
+  /* grid-auto-rows: 1fr; */
+  gap: 3vw;
+  justify-content: space-around;
+  align-items: top;
+}
+
+.oneCountry {
+  background-color: var(--LightModeText);
+  display: flex;
+  flex-direction: column;
+  height: 22vw;
+}
+
+.imgFlag {
+  width: 100%;
+  height: 11vw;
+  margin-bottom: 0.5vw;
+}
+
+.divinli,
+.oneCountry > span {
+  padding-left: 1vw;
+  margin-top: 1vw;
+}
+
+.oneCountry > span,
+.spanLabel {
+  font-weight: 700;
+  letter-spacing: 0.1vw;
+}
+
+.spanLabel {
+  font-size: 0.8rem;
+}
