@@ -31,12 +31,13 @@ const filterRestCountriesByName = (list) => {
   //     renderAllElements(theList);
   //   });
   // };
-  const AllFilterFunction = () => {
+  const allFilterFunction = () => {
     ulTag.innerHTML = "";
     theList = list.filter((e) => {
       return (
         e.region.includes(chosenRegion) &&
-        e.name.toLowerCase().includes(inputValue)
+        (e.name.toLowerCase().includes(inputValue) ||
+          e.capital.toLowerCase().includes(inputValue))
       );
     });
     renderAllElements(theList);
@@ -45,12 +46,12 @@ const filterRestCountriesByName = (list) => {
   inputFilter.addEventListener("input", (e) => {
     inputValue = e.target.value.toLowerCase().trim();
     // ulTag.innerHTML = "";
-    AllFilterFunction();
+    allFilterFunction();
   });
 
   inputFilterRegions.addEventListener("change", (ele) => {
     chosenRegion = ele.target.value;
-    AllFilterFunction();
+    allFilterFunction();
   });
 };
 
