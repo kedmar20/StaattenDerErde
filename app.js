@@ -1,4 +1,5 @@
 import { renderAllElements } from "./functions.js";
+import { filterRestCountriesByName } from "./filters.js";
 
 const apiUrl = "https://restcountries.com/v3.1/all";
 
@@ -9,7 +10,6 @@ fetch(apiUrl)
     return ress.json();
   })
   .then((resse) => {
-    console.log(resse);
     filteredRestCountries = resse.map((newList) => {
       return {
         capital: newList.capital ? newList.capital.join(", ") : "no capital",
@@ -35,5 +35,8 @@ fetch(apiUrl)
         return 0;
       }
     );
-    renderAllElements(filteredRestContriesAlphabetic);
+
+    // filter by name:
+
+    filterRestCountriesByName(filteredRestContriesAlphabetic);
   });

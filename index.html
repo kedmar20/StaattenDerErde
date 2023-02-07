@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Staatten der Erde</title>
     <link rel="stylesheet" href="styles.css" />
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,600;0,800;1,300;1,600;1,800&display=swap"
       rel="stylesheet"
@@ -16,6 +16,23 @@
   <body>
     <header>header</header>
     <main>
+      <div class="filters">
+        <input
+          type="text"
+          class="input-filter"
+          placeholder="search for a country..."
+          minlength="3"
+          maxlength="15"
+        />
+        <select name="region" id="region">
+          <option value="" class="option">Filter by Region</option>
+          <option value="Europe" class="option">Europe</option>
+          <option value="America" class="option">America</option>
+          <option value="Asia" class="option">Asia</option>
+          <option value="Africa" class="option">Africa</option>
+          <option value="Oceania" class="option">Oceania</option>
+        </select>
+      </div>
       <ul class="container-countries" id="ul"></ul>
     </main>
 
