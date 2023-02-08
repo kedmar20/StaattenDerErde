@@ -14,16 +14,21 @@
     />
   </head>
   <body>
-    <header>header</header>
+    <header>
+      <span class="header-text">Staatten der Erde</span>
+    </header>
     <main>
       <div class="filters">
-        <input
-          type="text"
-          class="input-filter"
-          placeholder="search for a country or capital..."
-          minlength="3"
-          maxlength="15"
-        />
+        <form>
+          <label for="site-search" class="label-site-search"></label>
+          <input
+            type="search"
+            placeholder="search for a country or capital..."
+            id="site-search"
+            class="input-filter"
+          />
+        </form>
+
         <select name="region" id="region">
           <option value="" class="option">Filter by Region</option>
           <option value="Europe" class="option">Europe</option>
