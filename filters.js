@@ -7,8 +7,8 @@ const filterRestCountriesByName = (list) => {
   let inputValue = "";
   let chosenRegion = "";
   let theList = list;
-  renderAllElements(theList);
 
+  renderAllElements(theList);
   //   inputFilter.addEventListener("input", (e) => {
   //     inputValue = e.target.value.toLowerCase().trim();
   //     console.log(inputValue);

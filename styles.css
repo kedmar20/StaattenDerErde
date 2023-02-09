@@ -30,6 +30,12 @@ header {
   font-size: 35px;
 }
 
+.href-header-text {
+  color: var(--LightModeBackground);
+  text-decoration: none;
+  cursor: pointer;
+}
+
 main {
   align-items: center;
   display: flex;
@@ -46,6 +52,44 @@ main {
   justify-content: space-between;
   padding: 3em;
   width: 100%;
+}
+
+form {
+  color: #b9b9b9;
+  display: flex;
+  padding: 2px;
+  border: 1px solid currentColor;
+  border-radius: 5px;
+}
+input[type="search"] {
+  border: none;
+  background: transparent;
+  margin: 0;
+  padding: 7px 8px;
+  font-size: 14px;
+  color: inherit;
+  border: 1px solid transparent;
+  border-radius: inherit;
+  width: 24rem;
+  outline: none;
+}
+input[type="search"]::placeholder {
+  color: #bbb;
+  font-family: "Nunito Sans", sans-serif;
+}
+.label-site-search {
+  text-indent: -999px;
+  overflow: hidden;
+  width: 40px;
+  padding: 0;
+  margin: 0;
+  border: 1px solid none;
+  border-radius: inherit;
+  background: transparent url(assets/search.svg)
+    /* url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") */
+    no-repeat center;
+  background-size: 1.5vw;
+  opacity: 0.7;
 }
 
 .option,
@@ -167,46 +211,24 @@ main {
   }
 }
 
+.container-countries-single {
+  display: flex;
+  width: 95%;
+  height: 90vh;
+  justify-content: space-around;
+  align-items: start;
+  padding-top: 6vh;
+}
 .div-for-items-right {
   height: 25vh;
-  width: 40vw;
+  width: 40%;
   background-color: #252525;
 }
-
-form {
-  color: #b9b9b9;
-  display: flex;
-  padding: 2px;
-  border: 1px solid currentColor;
-  border-radius: 5px;
+.img-single {
+  width: 40%;
 }
-input[type="search"] {
-  border: none;
-  background: transparent;
-  margin: 0;
-  padding: 7px 8px;
-  font-size: 14px;
-  color: inherit;
-  border: 1px solid transparent;
-  border-radius: inherit;
-  width: 24rem;
-  outline: none;
-}
-input[type="search"]::placeholder {
-  color: #bbb;
-  font-family: "Nunito Sans", sans-serif;
-}
-.label-site-search {
-  text-indent: -999px;
-  overflow: hidden;
-  width: 40px;
-  padding: 0;
-  margin: 0;
-  border: 1px solid none;
-  border-radius: inherit;
-  background: transparent url(assets/search.svg)
-    /* url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") */
-    no-repeat center;
-  background-size: 1.5vw;
-  opacity: 0.7;
+.div-list-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
 }
