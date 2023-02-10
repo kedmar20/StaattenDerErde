@@ -38,8 +38,11 @@ const renderSingleCountry = (staat) => {
   mainDivForSingle.classList.remove("container-countries");
   const filtersDivForSingle = document.querySelector(".filters");
   const buttonBack = document.createElement("button");
+  const buttonBackA = document.createElement("a");
   buttonBack.classList.add("button-back");
-  buttonBack.innerText = "<-back";
+
+  buttonBack.innerText = "Back";
+  buttonBackA.href = `/`;
   const imgSingle = document.createElement("img");
   imgSingle.classList.add("img-single");
   imgSingle.src = staat.flags.png;
@@ -54,8 +57,8 @@ const renderSingleCountry = (staat) => {
   divBorderCountries.classList.add("div-border-countries");
 
   console.log(staat);
-
-  filtersDivForSingle.appendChild(buttonBack);
+  buttonBackA.appendChild(buttonBack);
+  filtersDivForSingle.appendChild(buttonBackA);
   mainDivForSingle.appendChild(imgSingle);
   mainDivForSingle.appendChild(divForItemsRight);
   divForItemsRight.appendChild(pForName);
@@ -150,7 +153,7 @@ const renderSingleCountry = (staat) => {
           const createdButton = document.createElement("button");
           const createdButtonA = document.createElement("a");
           createdButton.classList.add("creator-button");
-          createdButton.innerText = `${staat.borders[i]}`;
+          createdButton.innerText = `${findNach(staat.borders[i])}`;
           // createdButtonA.href = `/`;
           createdButtonA.href = `/?elements=${findNach(staat.borders[i])}`;
           console.log(createdButtonA.href);

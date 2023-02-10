@@ -2,14 +2,13 @@ import { renderAllElements } from "./functions.js";
 import { filterRestCountriesByName } from "./filters.js";
 import { renderSingle } from "./render-single.js";
 
+let findNach;
+
 // if (window.location.search.includes("?elements=")) {
 //   renderSingle();
 // } else {
-
 const apiUrl = "https://restcountries.com/v3.1/all";
 let filteredRestCountries = [];
-
-let findNach;
 
 fetch(apiUrl)
   .then((ress) => {
@@ -53,7 +52,7 @@ fetch(apiUrl)
     if (window.location.search.includes("?elements=")) {
       renderSingle();
     } else {
-      // filter by name:
+      //   // filter by name:
       filterRestCountriesByName(filteredRestContriesAlphabetic);
     }
   });
