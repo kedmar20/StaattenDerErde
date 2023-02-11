@@ -49,6 +49,20 @@ const filterRestCountriesByName = (list) => {
     allFilterFunction();
   });
 
+  //fcn change the placeholders text depending on the screen view:
+  // function testMedia(media) {
+  //   if (media.matches) {
+  //     inputFilter.placeholder = "search for a country or capital...";
+  //   } else {
+  //     inputFilter.placeholder = "search...";
+  //   }
+  // }
+  // const media = window.matchMedia("(min-width: 900px)");
+  // //after loading:
+  // testMedia(media);
+  // //change listening:
+  // media.addEventListener("change", testMedia);
+
   inputFilterRegions.addEventListener("change", (ele) => {
     chosenRegion = ele.target.value;
     allFilterFunction();

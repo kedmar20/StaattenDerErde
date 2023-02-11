@@ -62,6 +62,7 @@ form {
   border: 1px solid currentColor;
   border-radius: 5px;
 }
+
 input[type="search"] {
   border: none;
   background: transparent;
@@ -74,10 +75,12 @@ input[type="search"] {
   width: 24rem;
   outline: none;
 }
+
 input[type="search"]::placeholder {
   color: #bbb;
   font-family: "Nunito Sans", sans-serif;
 }
+
 .label-site-search {
   text-indent: -999px;
   overflow: hidden;
@@ -105,11 +108,13 @@ input[type="search"]::placeholder {
   background: transparent;
   font-family: "Nunito Sans", sans-serif;
 }
+
 .option:not(:checked) {
   background-color: #4d4b4b;
   line-height: 5px;
   letter-spacing: 5px;
 }
+
 .option:checked {
   color: #111111;
   letter-spacing: 5px;
@@ -175,17 +180,36 @@ input[type="search"]::placeholder {
     height: 30vw;
     font-size: 1.4rem;
   }
+
   .span-label {
     font-size: 1.4rem;
   }
+
+  .label-site-search {
+    background-size: 2.5vw;
+  }
+
+  .option,
+  #region {
+    width: 170px;
+    margin-left: 10px;
+  }
 }
+
 @media screen and (max-width: 600px) {
+  header {
+    width: 100%;
+  }
+  main {
+    width: 100%;
+  }
   .container-countries {
     grid-template-columns: 1fr 1fr;
   }
   .one-country {
-    height: 45vw;
+    height: fit-content;
     font-size: 2.3rem;
+    padding: 10px;
   }
   .span-label {
     font-size: 1.9rem;
@@ -194,13 +218,20 @@ input[type="search"]::placeholder {
     font-size: 30px;
     padding: 0.6em;
   }
+  input[type="search"] {
+    width: 36vw;
+  }
+  .label-site-search {
+    background-size: 4.5vw;
+  }
 }
+
 @media screen and (max-width: 400px) {
   .container-countries {
     grid-template-columns: 1fr;
   }
   .one-country {
-    height: 40vh;
+    /* height: 40vh; */
     font-size: 4rem;
   }
   .span-label {
@@ -249,6 +280,10 @@ input[type="search"]::placeholder {
   font-weight: 700;
   font-size: 0.9rem;
 }
+.border-span-buttons {
+  display: flex;
+  flex-wrap: wrap;
+}
 button {
   width: 11vw;
   height: 4vh;
@@ -261,12 +296,10 @@ button {
   color: var(--LightModeBackground);
   transition: all 0.3s;
 }
-
 button:hover {
   transform: scale(107%);
   background-color: hsl(200, 15%, 20%);
 }
-
 .button-back {
   font-size: 2vh;
   letter-spacing: 1.5px;
@@ -276,7 +309,6 @@ button:hover {
   background-size: 1.5vw;
   padding: 0 0 0 1.5vw;
 }
-
 .p-for-name {
   font-size: 2.5rem;
   font-weight: 700;
@@ -291,7 +323,6 @@ button:hover {
 @media screen and (max-width: 1200px) {
   .div-list-grid {
     grid-template-columns: 1fr;
-    /* grid-template-rows: 1fr 1fr 1fr 1fr 1fr; */
     font-size: 1.6rem;
   }
   .div-list-grid-span-label {
@@ -314,6 +345,7 @@ button:hover {
     font-size: 1.6rem;
   }
 }
+
 @media screen and (max-width: 600px) {
   .container-countries-single {
     width: 100%;
@@ -351,13 +383,16 @@ button:hover {
   }
   button {
     width: 27vw;
+    height: 6vh;
   }
   .p-for-name {
     font-size: 5.5rem;
   }
-
   .button-back {
-    width: 22vw;
+    width: 29vw;
     background-size: 3.5vw;
+  }
+  .border-span-buttons {
+    justify-content: center;
   }
 }

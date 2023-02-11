@@ -1,6 +1,7 @@
 import { renderAllElements } from "./functions.js";
 import { filterRestCountriesByName } from "./filters.js";
 import { renderSingle } from "./render-single.js";
+import "./styles.css";
 
 let findNach;
 

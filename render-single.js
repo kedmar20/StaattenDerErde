@@ -6,8 +6,6 @@ const renderSingle = () => {
 
   const searchParams = new URLSearchParams(window.location.search);
   const nameOfCountry = searchParams.get("elements");
-  console.log(nameOfCountry);
-  // let singleCountry;
 
   // if error:
   if (!nameOfCountry) {
@@ -21,9 +19,6 @@ const renderSingle = () => {
       if (!res || res.length === 0) {
         backHomePage();
       }
-      // singleCountry = {
-      //   capital: res.capital ? res.capital.join(", ") : "no capital",
-      // };
       renderSingleCountry(res);
     });
 };
@@ -80,6 +75,7 @@ const renderSingleCountry = (staat) => {
       Object.values(staat.demonyms)
     );
     for (let i = 0; i < 10; i++) {
+      const media = window.matchMedia("(min-width: 600px)");
       const divListGridSpan = document.createElement("span");
       const divListGridSpanLabel = document.createElement("span");
       divListGridSpanLabel.classList.add("div-list-grid-span-label");
@@ -87,45 +83,91 @@ const renderSingleCountry = (staat) => {
       divListGridSpan.appendChild(divListGridSpanLabel);
       divListGridSpan.appendChild(divListGridSpanValue);
       divListGrid.appendChild(divListGridSpan);
-      i === 0
-        ? ((divListGridSpanLabel.innerText = `Native Name: `),
-          (divListGridSpanValue.innerText = `${
-            Object.values(staat.name.nativeName)[0].official
-          }`))
-        : i === 1
-        ? ((divListGridSpanLabel.innerText = `Top Level Domain: `),
-          (divListGridSpanValue.innerText = `${staat.tld}`))
-        : i === 2
-        ? ((divListGridSpanLabel.innerText = `Population: `),
-          (divListGridSpanValue.innerText = `${staat.population.toLocaleString()}`))
-        : i === 3
-        ? ((divListGridSpanLabel.innerText = `Currencies: `),
-          (divListGridSpanValue.innerText = `${
-            Object.values(staat.currencies)[0].name
-            // .map((el) => {
-            //   return el.name;
-            // })
-            // .join(", ")
-          }`))
-        : i === 4
-        ? ((divListGridSpanLabel.innerText = `Region: `),
-          (divListGridSpanValue.innerText = `${staat.region}`))
-        : i === 5
-        ? ((divListGridSpanLabel.innerText = `Languages: `),
-          (divListGridSpanValue.innerText = `${Object.values(
-            staat.languages
-          ).join(", ")}`))
-        : i === 6
-        ? ((divListGridSpanLabel.innerText = `Sub Region: `),
-          (divListGridSpanValue.innerText = `${staat.subregion}`))
-        : i === 7
-        ? ((divListGridSpanLabel.innerText = ``),
-          (divListGridSpanValue.innerText = ``))
-        : i === 8
-        ? ((divListGridSpanLabel.innerText = `Capital: `),
-          (divListGridSpanValue.innerText = `${staat.capital.join(", ")}`))
-        : i === 9;
-      console.log(i);
+      function testMedia(media) {
+        if (media.matches) {
+          i === 0
+            ? ((divListGridSpanLabel.innerText = `Native Name: `),
+              (divListGridSpanValue.innerText = `${
+                Object.values(staat.name.nativeName)[0].official
+              }`))
+            : i === 1
+            ? ((divListGridSpanLabel.innerText = `Top Level Domain: `),
+              (divListGridSpanValue.innerText = `${staat.tld}`))
+            : i === 2
+            ? ((divListGridSpanLabel.innerText = `Population: `),
+              (divListGridSpanValue.innerText = `${staat.population.toLocaleString()}`))
+            : i === 3
+            ? ((divListGridSpanLabel.innerText = `Currencies: `),
+              (divListGridSpanValue.innerText = `${
+                Object.values(staat.currencies)[0].name
+                // .map((el) => {
+                //   return el.name;
+                // })
+                // .join(", ")
+              }`))
+            : i === 4
+            ? ((divListGridSpanLabel.innerText = `Region: `),
+              (divListGridSpanValue.innerText = `${staat.region}`))
+            : i === 5
+            ? ((divListGridSpanLabel.innerText = `Languages: `),
+              (divListGridSpanValue.innerText = `${Object.values(
+                staat.languages
+              ).join(", ")}`))
+            : i === 6
+            ? ((divListGridSpanLabel.innerText = `Sub Region: `),
+              (divListGridSpanValue.innerText = `${staat.subregion}`))
+            : i === 7
+            ? ((divListGridSpanLabel.innerText = ``),
+              (divListGridSpanValue.innerText = ``))
+            : i === 8
+            ? ((divListGridSpanLabel.innerText = `Capital: `),
+              (divListGridSpanValue.innerText = `${staat.capital.join(", ")}`))
+            : i === 9;
+          console.log(i);
+        } else {
+          console.log("media works!");
+          i === 0
+            ? ((divListGridSpanLabel.innerText = `Native Name: `),
+              (divListGridSpanValue.innerText = `${
+                Object.values(staat.name.nativeName)[0].official
+              }`))
+            : i === 6
+            ? ((divListGridSpanLabel.innerText = `Top Level Domain: `),
+              (divListGridSpanValue.innerText = `${staat.tld}`))
+            : i === 1
+            ? ((divListGridSpanLabel.innerText = `Population: `),
+              (divListGridSpanValue.innerText = `${staat.population.toLocaleString()}`))
+            : i === 7
+            ? ((divListGridSpanLabel.innerText = `Currencies: `),
+              (divListGridSpanValue.innerText = `${
+                Object.values(staat.currencies)[0].name
+                // .map((el) => {
+                //   return el.name;
+                // })
+                // .join(", ")
+              }`))
+            : i === 2
+            ? ((divListGridSpanLabel.innerText = `Region: `),
+              (divListGridSpanValue.innerText = `${staat.region}`))
+            : i === 8
+            ? ((divListGridSpanLabel.innerText = `Languages: `),
+              (divListGridSpanValue.innerText = `${Object.values(
+                staat.languages
+              ).join(", ")}`))
+            : i === 3
+            ? ((divListGridSpanLabel.innerText = `Sub Region: `),
+              (divListGridSpanValue.innerText = `${staat.subregion}`))
+            : i === 5
+            ? ((divListGridSpanLabel.innerHTML = `<br>`),
+              (divListGridSpanValue.innerText = ``))
+            : i === 4
+            ? ((divListGridSpanLabel.innerText = `Capital: `),
+              (divListGridSpanValue.innerText = `${staat.capital.join(", ")}`))
+            : i === 9;
+        }
+      }
+      testMedia(media);
+      media.addEventListener("change", testMedia);
     }
   }
 
