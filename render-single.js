@@ -24,7 +24,7 @@ const renderSingle = () => {
 };
 
 const backHomePage = () => {
-  window.location.href = "/";
+  window.location.href = "./index.html";
 };
 
 const renderSingleCountry = (staat) => {
@@ -37,7 +37,7 @@ const renderSingleCountry = (staat) => {
   buttonBack.classList.add("button-back");
 
   buttonBack.innerText = "Back";
-  buttonBackA.href = `/`;
+  buttonBackA.href = `./index.html`;
   const imgSingle = document.createElement("img");
   imgSingle.classList.add("img-single");
   imgSingle.src = staat.flags.png;
@@ -193,7 +193,9 @@ const renderSingleCountry = (staat) => {
           createdButton.classList.add("creator-button");
           createdButton.innerText = `${findNach(staat.borders[i])}`;
           // createdButtonA.href = `/`;
-          createdButtonA.href = `?elements=${findNach(staat.borders[i])}`;
+          createdButtonA.href = `./index.html/?elements=${findNach(
+            staat.borders[i]
+          )}`;
           console.log(createdButtonA.href);
           divBorderCountriesSpansButtons.appendChild(createdButtonA);
           createdButtonA.appendChild(createdButton);
