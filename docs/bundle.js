@@ -997,9 +997,7 @@ const renderSingleCountry = (staat) => {
           createdButton.classList.add("creator-button");
           createdButton.innerText = `${(0,_app_js__WEBPACK_IMPORTED_MODULE_0__.findNach)(staat.borders[i])}`;
           // createdButtonA.href = `/`;
-          createdButtonA.href = `./index.html/?elements=${(0,_app_js__WEBPACK_IMPORTED_MODULE_0__.findNach)(
-            staat.borders[i]
-          )}`;
+          createdButtonA.href = `./?elements=${(0,_app_js__WEBPACK_IMPORTED_MODULE_0__.findNach)(staat.borders[i])}`;
           console.log(createdButtonA.href);
           divBorderCountriesSpansButtons.appendChild(createdButtonA);
           createdButtonA.appendChild(createdButton);
