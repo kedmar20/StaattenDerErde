@@ -186,10 +186,6 @@ const renderSingleCountry = (staat) => {
       sbl > 0 ? creator(staat) : "";
 
       function creator(staat) {
-        //   // const findNach = "Poland";
-        //   const findNach = function () {
-        //     return "Poland";
-        //   };
         for (let i = 0; i < sbl; i++) {
           console.log(i);
           const createdButton = document.createElement("button");
@@ -197,7 +193,7 @@ const renderSingleCountry = (staat) => {
           createdButton.classList.add("creator-button");
           createdButton.innerText = `${findNach(staat.borders[i])}`;
           // createdButtonA.href = `/`;
-          createdButtonA.href = `/?elements=${findNach(staat.borders[i])}`;
+          createdButtonA.href = `?elements=${findNach(staat.borders[i])}`;
           console.log(createdButtonA.href);
           divBorderCountriesSpansButtons.appendChild(createdButtonA);
           createdButtonA.appendChild(createdButton);
