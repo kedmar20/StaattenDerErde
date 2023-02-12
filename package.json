@@ -96,7 +96,7 @@
     "webpack-dev-server": "^4.11.1"
   },
   "scripts": {
-    "build": "webpack --mode=development",
+    "build": "webpack",
     "dev": "webpack serve",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"

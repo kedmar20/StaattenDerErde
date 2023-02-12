@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Staatten der Erde</title>
+  <script defer src="bundle.js"></script></head>
+  <body>
+    <header>
+      <a href="/" class="href-header-text">
+        <span class="header-text">Staatten der Erde</span>
+      </a>
+    </header>
+    <main>
+      <div class="filters">
+        <form>
+          <label for="site-search" class="label-site-search"></label>
+          <input
+            type="search"
+            placeholder="search for a country or capital..."
+            id="site-search"
+            class="input-filter"
+          />
+        </form>
+
+        <select name="region" id="region">
+          <option value="" class="option">Filter by Region</option>
+          <option value="Europe" class="option">Europe</option>
+          <option value="America" class="option">America</option>
+          <option value="Asia" class="option">Asia</option>
+          <option value="Africa" class="option">Africa</option>
+          <option value="Oceania" class="option">Oceania</option>
+        </select>
+      </div>
+      <ul class="container-countries" id="ul"></ul>
+    </main>
+  </body>
+</html>
