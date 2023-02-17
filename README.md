@@ -16,7 +16,7 @@ Users are able to:
   - code construct and structure built (mostly) with functions 
   - filters: input + choose cooperation
   
-### Routing Detal View
+### Routing Detail View
   if (window.location.search.includes("?elements=")) {
   		renderSingle();
 	... 
