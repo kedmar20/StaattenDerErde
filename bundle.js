@@ -26,10 +26,10 @@ let findNach;
 // if (window.location.search.includes("?elements=")) {
 //   renderSingle();
 // } else {
-const apiUrl = "https://restcountries.com/v3.1/all";
+const apiUrl = "https://cors-anywhere.herokuapp.com/https://restcountries.com/v3.1/all";
 let filteredRestCountries = [];
 
-fetch("https://cors-anywhere.herokuapp.com" / apiUrl)
+fetch(apiUrl)
    .then((ress) => {
       return ress.json();
    })
