@@ -29,7 +29,7 @@ let findNach;
 const apiUrl = "https://restcountries.com/v3.1/all";
 let filteredRestCountries = [];
 
-fetch(apiUrl, { mode: "no-cors" })
+fetch(apiUrl, { mode: "no-cors", credentials: "same-origin" })
    .then((ress) => {
       return ress.json();
    })
