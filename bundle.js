@@ -29,7 +29,7 @@ let findNach;
 const apiUrl = "https://restcountries.com/v3.1/all";
 let filteredRestCountries = [];
 
-fetch(apiUrl, { mode: "no-cors", credentials: "same-origin" })
+fetch("https://cors-anywhere.herokuapp.com" / apiUrl)
    .then((ress) => {
       return ress.json();
    })
