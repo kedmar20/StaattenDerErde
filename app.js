@@ -11,7 +11,7 @@ let findNach;
 const apiUrl = "https://restcountries.com/v3.1/all";
 let filteredRestCountries = [];
 
-fetch(apiUrl)
+fetch(apiUrl, { mode: 'no-cors'})
   .then((ress) => {
     return ress.json();
   })
