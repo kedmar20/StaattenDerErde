@@ -29,52 +29,50 @@ let findNach;
 const apiUrl = "https://restcountries.com/v3.1/all";
 let filteredRestCountries = [];
 
-fetch(apiUrl)
-  .then((ress) => {
-    return ress.json();
-  })
-  .then((resse) => {
-    filteredRestCountries = resse.map((newList) => {
-      return {
-        capital: newList.capital ? newList.capital.join(", ") : "no capital",
-        name: newList.name.common,
-        region: newList.region,
-        population: newList.population.toLocaleString(),
-        flagUrl: newList.flags.png,
-      };
-    });
-    findNach = function (elem) {
-      let findNach2 = findNach;
-      resse.forEach((reter) => {
-        if (elem === reter.cca3) {
-          findNach2 = reter.name.common;
-        }
+fetch(apiUrl, { mode: "opaque" })
+   .then((ress) => {
+      return ress.json();
+   })
+   .then((resse) => {
+      filteredRestCountries = resse.map((newList) => {
+         return {
+            capital: newList.capital ? newList.capital.join(", ") : "no capital",
+            name: newList.name.common,
+            region: newList.region,
+            population: newList.population.toLocaleString(),
+            flagUrl: newList.flags.png,
+         };
       });
-      return findNach2;
-    };
-    // sort by name
-    const filteredRestContriesAlphabetic = filteredRestCountries.sort(
-      (a, b) => {
-        const nameA = a.name.toUpperCase(); // ignore upper and lowercase
-        const nameB = b.name.toUpperCase(); // ignore upper and lowercase
-        if (nameA < nameB) {
-          return -1;
-        }
-        if (nameA > nameB) {
-          return 1;
-        }
-        // names must be equal
-        return 0;
-      }
-    );
+      findNach = function (elem) {
+         let findNach2 = findNach;
+         resse.forEach((reter) => {
+            if (elem === reter.cca3) {
+               findNach2 = reter.name.common;
+            }
+         });
+         return findNach2;
+      };
+      // sort by name
+      const filteredRestContriesAlphabetic = filteredRestCountries.sort((a, b) => {
+         const nameA = a.name.toUpperCase(); // ignore upper and lowercase
+         const nameB = b.name.toUpperCase(); // ignore upper and lowercase
+         if (nameA < nameB) {
+            return -1;
+         }
+         if (nameA > nameB) {
+            return 1;
+         }
+         // names must be equal
+         return 0;
+      });
 
-    if (window.location.search.includes("?elements=")) {
-      (0,_render_single_js__WEBPACK_IMPORTED_MODULE_2__.renderSingle)();
-    } else {
-      //   // filter by name:
-      (0,_filters_js__WEBPACK_IMPORTED_MODULE_1__.filterRestCountriesByName)(filteredRestContriesAlphabetic);
-    }
-  });
+      if (window.location.search.includes("?elements=")) {
+         (0,_render_single_js__WEBPACK_IMPORTED_MODULE_2__.renderSingle)();
+      } else {
+         //   // filter by name:
+         (0,_filters_js__WEBPACK_IMPORTED_MODULE_1__.filterRestCountriesByName)(filteredRestContriesAlphabetic);
+      }
+   });
 
 
 
@@ -828,7 +826,7 @@ const renderSingle = () => {
 };
 
 const backHomePage = () => {
-  window.location.href = "/";
+  window.location.href = "./index.html";
 };
 
 const renderSingleCountry = (staat) => {
@@ -841,7 +839,7 @@ const renderSingleCountry = (staat) => {
   buttonBack.classList.add("button-back");
 
   buttonBack.innerText = "Back";
-  buttonBackA.href = `/`;
+  buttonBackA.href = `./index.html`;
   const imgSingle = document.createElement("img");
   imgSingle.classList.add("img-single");
   imgSingle.src = staat.flags.png;
@@ -990,10 +988,6 @@ const renderSingleCountry = (staat) => {
       sbl > 0 ? creator(staat) : "";
 
       function creator(staat) {
-        //   // const findNach = "Poland";
-        //   const findNach = function () {
-        //     return "Poland";
-        //   };
         for (let i = 0; i < sbl; i++) {
           console.log(i);
           const createdButton = document.createElement("button");
@@ -1001,7 +995,7 @@ const renderSingleCountry = (staat) => {
           createdButton.classList.add("creator-button");
           createdButton.innerText = `${(0,_app_js__WEBPACK_IMPORTED_MODULE_0__.findNach)(staat.borders[i])}`;
           // createdButtonA.href = `/`;
-          createdButtonA.href = `/?elements=${(0,_app_js__WEBPACK_IMPORTED_MODULE_0__.findNach)(staat.borders[i])}`;
+          createdButtonA.href = `./?elements=${(0,_app_js__WEBPACK_IMPORTED_MODULE_0__.findNach)(staat.borders[i])}`;
           console.log(createdButtonA.href);
           divBorderCountriesSpansButtons.appendChild(createdButtonA);
           createdButtonA.appendChild(createdButton);
